@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    //6a
+    const hour = 10;
+    const name = "Gulnaz";
+
+    if (hour >= 6 && hour <= 12) {
+      console.log(`Good Morning ${name}!`);
+    } else if ( hour >= 13 && hour >= 17) {
+      console.log(`Good Afternoon ${name}!`);
+    } else {
+      console.log(`Good Night ${name}!`);
+    };
+
+    //6d
+    const age = 15;
+    const isHoliday = true;
+
+    // && has a higher priority than || so for
+    // this to work correctly, we need to add
+    // brackets () around the || check to make
+    // sure that it gets done first.
+
+    if ((age <= 6 || age >= 65) && !isHoliday) {
+      console.log("Discount");
+    } else {
+      console.log("No discount");
+    }
+
+    //6f
+
+    const randomNumber = Math.random();
+    //let result;
+
+    /*
+    if (randomNumber < 0.5) {
+      result = 'heads';
+    } else {
+      result = 'tails';
+    }
+    */
+
+    const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+    /*
+    let guess = 'heads';
+
+    if (guess === result) {
+      console.log("You win!");
+    } else {
+      console.log("You lose!");
+    }
+    */
+   const guess = 'heads';
+   console.log(guess === result ? "You win!" : "You lose!");
+
+
+  
+  </script>
+</body>
+</html>
