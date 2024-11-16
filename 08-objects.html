@@ -36,6 +36,83 @@
     console.log(JSON.parse(jsonString));
     
 
+    //8a
+    const product5 = {
+      name: 'basketball',
+      price: 2095,
+    }
+    console.log(product5);
+    //8b
+    product5.price += 500;
+    console.log(product5);
+    //8c
+    product5['delivery-time'] = '3 days';
+    console.log(product5);
+    //8d
+    function comparePrice(product1, product3){
+      if (product1.price < product3.price){
+        return product1;
+      } else {
+        return product3;
+      }
+    }
+
+    const product1 = {
+      name: 'basketball',
+      price: 2095,
+    };
+    const product3 = {
+      name: 'keys',
+      price: 25,
+    }
+    console.log(comparePrice(product1, product3));
+
+    //8e
+    function isSameProduct(product6, product7){
+      if (product6.name === product7.name && product6.price === product7.price){
+        return true;
+      }else {
+        return false;
+      }
+    }
+    /*
+    // Here is an alternative solution that uses less code.
+    function isSameProduct(product6, product7) {
+        return (
+          product6.name === product7.name &&
+          product6.price === product7.price
+        );
+      }
+      */
+
+    const product6 = {
+      name: 'notebook',
+      price: 100,
+    }
+    const product7 = {
+      name: 'pens',
+      price: 50,
+    }
+    const product8 = {
+      name: 'notebook',
+      price: 100,
+      };
+    console.log(isSameProduct(product6, product7));
+    console.log(isSameProduct(product6, product8));
+
+    //8f
+    const text = 'good Morning!';
+    const lowerCaseText = text.toLowerCase();
+    console.log(lowerCaseText);
+
+    //or 
+    console.log('Good Morning'.toLowerCase());
+    console.log('TESTING'.toLowerCase());
+
+    //8g
+    console.log('hello'.repeat(2));
+    console.log('test'.repeat(3));
+
     
 
   </script>
