@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions</title>
+  </head>
+  <body>
+    <button class="js-button" onclick="
+      updateButton();
+    ">Start</button>
+
+    <script>
+    //12a
+    
+    const add = function(){
+    console.log(2 + 3);
+    }
+    add();
+
+    //12b
+
+    function runTwice(fun){
+      fun();
+      fun();
+    }
+    runTwice(function(){
+      console.log("Hello");
+    });
+    runTwice(add);
+
+    //12c
+
+    // Grouping the JavaScript code into a function
+    // is optional, but it is a bit cleaner.
+    function updateButton() {
+    const button = document.querySelector('.js-button');
+
+    setTimeout(function() {
+    button.innerHTML = 'Finished!';
+        }, 1000);
+      }
+    </script>
+
+
