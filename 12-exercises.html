@@ -7,6 +7,17 @@
     <button class="js-button" onclick="
       updateButton();
     ">Start</button>
+    <button class="js-button2" onclick="
+     updateButton2();
+    ">Add to card</button>
+
+    <button onclick="
+    messages++;
+    ">Add</button>
+
+    <button onclick="
+    messages--;
+    ">Remove</button>
 
     <script>
     //12a
@@ -34,10 +45,36 @@
     function updateButton() {
     const button = document.querySelector('.js-button');
 
+    button.innerHTML = 'Loading...';
     setTimeout(function() {
     button.innerHTML = 'Finished!';
         }, 1000);
       }
+
+      //11e
+
+      function updateButton2(){
+        const button2 = document.querySelector('.js-button2');
+        button2.innerHTML = 'Added';
+
+        setTimeout(function(){
+          button2.innerHTML = 'Add to cart';
+        }, 2000);
+      }
+
+      //12g
+
+      let messages = 2;
+
+      setInterval(function() {
+        if (document.title === 'App') {
+          document.title = `(${messages}) New messages`;
+        } else {
+          document.title = 'App';
+        }
+      }, 1000);
+
+
     </script>
 
 
