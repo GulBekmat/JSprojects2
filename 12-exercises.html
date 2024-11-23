@@ -13,10 +13,16 @@
 
     <button onclick="
     messages++;
+    displayNotification();
     ">Add</button>
 
     <button onclick="
-    messages--;
+    if (messages > 0) {
+        messages--;
+    if (messages === 0) {
+          stopNotification();
+        }
+      }
     ">Remove</button>
 
     <script>
@@ -66,13 +72,35 @@
 
       let messages = 2;
 
-      setInterval(function() {
+      let intervalId;
+      let isDisplayingNotification;
+      displayNotification();
+
+      function displayNotification() {
+        // If we're already displaying the notification,
+        // stop this function because we don't want to
+        // create 2 intervals at the same time.
+        if (isDisplayingNotification) {
+          return;
+        }
+
+        isDisplayingNotification = true;
+
+      intervalId = setInterval(function() {
         if (document.title === 'App') {
           document.title = `(${messages}) New messages`;
         } else {
           document.title = 'App';
         }
       }, 1000);
+    }
+
+    function stopNotification() {
+        isDisplayingNotification = false;
+
+        clearInterval(intervalId);
+        document.title = 'App';
+      }
 
 
     </script>
